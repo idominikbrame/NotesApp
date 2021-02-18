@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* colors
+light-pink: #F7B2BD;
+forest-green-crayola: #60A561;
+grullo: #B2A198;
+paraidise pink: #F7B2BD;
+dark green: #053225;
+*/
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+a:hover {
+    opacity: .9;
+}
+body {
+    position: relative;
+    background: linear-gradient(-35deg, #F7B2BD 40%, #b2a1983a 30%);
+    height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.new-note-link {
+   position: absolute;
+   top: 80px;
+   left: 50px;
+}
+
+.new-note {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 40px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    color: #7c716b;
+    font-weight: bold;
+}
+
+.new-note:hover {
+    cursor: pointer;
+}
+table {
+    position: absolute;
+    top: 160px;
+    left: 50px;
+    width: 40%;
+    max-height: 75%;
+    background-color: white;
+    color: #7c716b;
+    padding: 10px 40px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+ 
+.modal {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0; 
+    bottom: 0;
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+/* .modal:target {
+    visibility: visible;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+} */
+
+.modal-buttons {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-between;
+    bottom: 30px;
+    right: 20px;
+}
+
+.modal-buttons button {
+    background-color: #F7B2BD;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 1.1em;
+    transition: .05s ease-in;
+}
+
+.modal-buttons button:hover {
+    background-color: #f88b9d;
+    cursor: pointer;
+}
+
+.modal-buttons button:active {
+    transform: scale(1.1);
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 100%;
+    height: 500px;
+    overflow: scroll;
+    background: white;
+    border-radius:5px;
+}
+
+form {
+    width: 50%;
+}
+.field {                      /* This keeps the label and input field together*/
+  position: relative;
+  margin: auto;
+}
+form {
+    width: 100%;
+    height: 100%;
+    color: #7c716b;
+}
+
+form h1 {
+    padding: 40px;
+    text-align: center;
+}
+
+.field {
+    width: 60%;
+    position: relative;
+    height: 75%;
+}
+
+.field input {
+    font-size: 15px;
+    position: absolute;
+    padding: 5px;
+    outline: none;
+    border: none;
+    color: #7c716b;
+    border-bottom: 2px solid  #7c716b;
+    width: 200px;
+    font-size: 1.1em;
+    left: 5px;
+}
+
+.field label {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+.field input:focus {
+    border-bottom: 2px solid #7c716b;
+}
+.field input:not(:focus) {
+    opacity: .8;
+    color: #7c716b;
+}
+
+.field input:focus + label, .field input:valid + label{
+    top: -30px
+}
+
+.field input:valid {
+    color: #7c716b;
+    background: white;
+    border-bottom: 2px solid #7c716b;
+}
+
+.field textarea {
+    position: absolute;
+    color: #7c716b;
+    top: 80px;
+    border-radius: 3px;
+    border: 2px solid #7c716b;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    background: transparent;
+    resize: none;
+    background-color: white;
+    font-size: 1.1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.field textarea:focus, .field textarea:valid{
+    outline: none;
+}
+
+.field textarea:not(:focus) {
+    opacity: .8;
+    color: #7c716b;
+}
+
+.field textarea:focus + .note, .field textarea:valid + .note{
+    top: 50px;
+    left: 15px;
+}
+
+.field .note {
+    position: absolute;
+    top: 90px;
+    left: 15px;
+    z-index: 0;
+}
+

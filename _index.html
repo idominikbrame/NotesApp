@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NotesApp</title>
+</head>
+<body>
+    <div class="new-note-link">
+       <a class="new-note" onclick="openAddNoteDialogue()">New Note</a>
+    </div>
+    <table id="table">
+        <tr>
+           <td class="table-item">Title:</td>
+           <td class="table-item">Note:</td>
+        </tr>
+    </table>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <form id="form" method="GET" >
+                <h1>New Note</h1>
+                <div class="field ">
+
+                    <input  class="title" type="text" required id="myTitle">
+
+                    <label >Title</label>
+
+                    <textarea required id="textarea"></textarea>
+
+                    <label class="note"> Note</label>
+                </div> 
+                             
+            </form>
+            <div class="modal-buttons">
+                <button class="cancel" onclick="reset()" data-dismiss="modal"> <a href="">Cancel</a></button>
+                <button type="submit" form="form">Submit</button>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
